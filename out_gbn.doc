@@ -1,0 +1,808 @@
+
+EVENT time: 18.705740,  type: 1, fromlayer5  entity: 0
+[A] Received a message from layer5. Window[0,0) Message[data=a..]
+[A] Processed an message from layer5. Window[0,0) Message[data=a..]
+[A] Send packet to layer3. Window[0,1) Packet[seq=0,ack=111,check=1954,data=a..]
+
+EVENT time: 24.170835,  type: 2, fromlayer3  entity: 1
+================================ Inside B_input===================================
+[B] Receive a packet from layer3. Expected[0] Packet[seq=0,ack=111,check=1954,data=a..]
+[B] Send packet to layer5. Expected[1] Packet[seq=0,ack=111,check=1954,data=a..]
+          TOLAYER3: packet being corrupted
+================================ Outside B_input(packet) =========================
+
+EVENT time: 29.402449,  type: 2, fromlayer3  entity: 0
+================================ Inside A_input===================================
+[A] Receive ACK packet from layer3. Window[0,1) Packet[seq=999999,ack=0,check=1843,data=a..]
+[A] ACK packet is corrupted. Window[0,1) Packet[seq=999999,ack=0,check=1843,data=a..]
+
+EVENT time: 35.124840,  type: 1, fromlayer5  entity: 0
+[A] Received a message from layer5. Window[0,1) Message[data=b..]
+[A] Processed an message from layer5. Window[0,1) Message[data=b..]
+          TOLAYER3: packet being lost
+[A] Send packet to layer3. Window[0,2) Packet[seq=1,ack=111,check=1974,data=b..]
+
+EVENT time: 37.680447,  type: 1, fromlayer5  entity: 0
+[A] Received a message from layer5. Window[0,2) Message[data=c..]
+[A] Processed an message from layer5. Window[0,2) Message[data=c..]
+          TOLAYER3: packet being corrupted
+[A] Send packet to layer3. Window[0,3) Packet[seq=2,ack=111,check=1994,data=c..]
+
+EVENT time: 38.705742,  type: 0, timerinterrupt   entity: 0
+[A] Time interrupt occur.Window[0,3)
+          TOLAYER3: packet being lost
+[A] >Resend the packet again. Window[0,3) Packet[seq=0,ack=111,check=1954,data=a..]
+[A] >Resend the packet again. Window[0,3) Packet[seq=1,ack=111,check=1974,data=b..]
+[A] >Resend the packet again. Window[0,3) Packet[seq=2,ack=111,check=1994,data=c..]
+
+EVENT time: 42.147713,  type: 2, fromlayer3  entity: 1
+================================ Inside B_input===================================
+[B] Receive a packet from layer3. Expected[1] Packet[seq=2,ack=111,check=1994,data=Z..]
+[B] Packet is corrupted. Expected[1] Packet[seq=2,ack=111,check=1994,data=Z..]
+          TOLAYER3: packet being corrupted
+================================ Outside B_input(packet) =========================
+
+EVENT time: 46.394402,  type: 1, fromlayer5  entity: 0
+[A] Received a message from layer5. Window[0,3) Message[data=d..]
+[A] Processed an message from layer5. Window[0,3) Message[data=d..]
+          TOLAYER3: packet being lost
+[A] Send packet to layer3. Window[0,4) Packet[seq=3,ack=111,check=2014,data=d..]
+
+EVENT time: 51.166374,  type: 2, fromlayer3  entity: 0
+================================ Inside A_input===================================
+[A] Receive ACK packet from layer3. Window[0,4) Packet[seq=2,ack=0,check=1874,data=Z..]
+[A] ACK packet process successfully accomplished!!. Window[1,4) Packet[seq=2,ack=0,check=1874,data=Z..]
+================================ Outside A_input===================================
+
+EVENT time: 51.576138,  type: 2, fromlayer3  entity: 1
+================================ Inside B_input===================================
+[B] Receive a packet from layer3. Expected[1] Packet[seq=1,ack=111,check=1974,data=b..]
+[B] Send packet to layer5. Expected[2] Packet[seq=1,ack=111,check=1974,data=b..]
+          TOLAYER3: packet being corrupted
+================================ Outside B_input(packet) =========================
+
+EVENT time: 53.202408,  type: 1, fromlayer5  entity: 0
+[A] Received a message from layer5. Window[1,4) Message[data=e..]
+[A] Processed an message from layer5. Window[1,4) Message[data=e..]
+[A] Send packet to layer3. Window[1,5) Packet[seq=4,ack=111,check=2034,data=e..]
+
+EVENT time: 55.124840,  type: 0, timerinterrupt   entity: 0
+[A] Time interrupt occur.Window[1,5)
+          TOLAYER3: packet being lost
+[A] >Resend the packet again. Window[1,5) Packet[seq=1,ack=111,check=1974,data=b..]
+          TOLAYER3: packet being corrupted
+[A] >Resend the packet again. Window[1,5) Packet[seq=2,ack=111,check=1994,data=c..]
+[A] >Resend the packet again. Window[1,5) Packet[seq=3,ack=111,check=2014,data=d..]
+          TOLAYER3: packet being lost
+[A] >Resend the packet again. Window[1,5) Packet[seq=4,ack=111,check=2034,data=e..]
+
+EVENT time: 57.152939,  type: 2, fromlayer3  entity: 0
+================================ Inside A_input===================================
+[A] Receive ACK packet from layer3. Window[1,5) Packet[seq=1,ack=1,check=1864,data=Z..]
+[A] ACK packet is corrupted. Window[1,5) Packet[seq=1,ack=1,check=1864,data=Z..]
+
+EVENT time: 59.039051,  type: 2, fromlayer3  entity: 1
+================================ Inside B_input===================================
+[B] Receive a packet from layer3. Expected[2] Packet[seq=2,ack=111,check=1994,data=c..]
+[B] Send packet to layer5. Expected[3] Packet[seq=2,ack=111,check=1994,data=c..]
+================================ Outside B_input(packet) =========================
+
+EVENT time: 60.345440,  type: 2, fromlayer3  entity: 0
+================================ Inside A_input===================================
+[A] Receive ACK packet from layer3. Window[1,5) Packet[seq=2,ack=2,check=1885,data=c..]
+[A] ACK packet process successfully accomplished!!. Window[3,5) Packet[seq=2,ack=2,check=1885,data=c..]
+================================ Outside A_input===================================
+
+EVENT time: 58.705742,  type: 0, timerinterrupt   entity: 0
+[A] Time interrupt occur.Window[3,5)
+          TOLAYER3: packet being corrupted
+[A] >Resend the packet again. Window[3,5) Packet[seq=3,ack=111,check=2014,data=d..]
+          TOLAYER3: packet being corrupted
+[A] >Resend the packet again. Window[3,5) Packet[seq=4,ack=111,check=2034,data=e..]
+
+EVENT time: 63.197636,  type: 2, fromlayer3  entity: 1
+================================ Inside B_input===================================
+[B] Receive a packet from layer3. Expected[3] Packet[seq=4,ack=111,check=2034,data=e..]
+[B] Disordered packet received. Expected[3] Packet[seq=4,ack=111,check=2034,data=e..]
+================================ Outside B_input(packet) =========================
+
+EVENT time: 68.016914,  type: 2, fromlayer3  entity: 0
+================================ Inside A_input===================================
+[A] Receive ACK packet from layer3. Window[3,5) Packet[seq=4,ack=2,check=1925,data=e..]
+[A] Received duplicate ACK. Window[3,5) Packet[seq=4,ack=2,check=1925,data=e..]
+[A] >Resend the packet again. Window[3,5) Packet[seq=3,ack=111,check=2014,data=d..]
+[A] >Resend the packet again. Window[3,5) Packet[seq=4,ack=111,check=2034,data=e..]
+
+EVENT time: 69.035599,  type: 2, fromlayer3  entity: 1
+================================ Inside B_input===================================
+[B] Receive a packet from layer3. Expected[3] Packet[seq=2,ack=111,check=1994,data=Z..]
+[B] Packet is corrupted. Expected[3] Packet[seq=2,ack=111,check=1994,data=Z..]
+          TOLAYER3: packet being lost
+================================ Outside B_input(packet) =========================
+
+EVENT time: 70.910789,  type: 2, fromlayer3  entity: 1
+================================ Inside B_input===================================
+[B] Receive a packet from layer3. Expected[3] Packet[seq=3,ack=111,check=2014,data=d..]
+[B] Send packet to layer5. Expected[4] Packet[seq=3,ack=111,check=2014,data=d..]
+================================ Outside B_input(packet) =========================
+
+EVENT time: 72.839478,  type: 1, fromlayer5  entity: 0
+[A] Received a message from layer5. Window[3,5) Message[data=f..]
+[A] Processed an message from layer5. Window[3,5) Message[data=f..]
+          TOLAYER3: packet being lost
+[A] Send packet to layer3. Window[3,6) Packet[seq=5,ack=111,check=2054,data=f..]
+
+EVENT time: 75.667404,  type: 1, fromlayer5  entity: 0
+[A] Received a message from layer5. Window[3,6) Message[data=g..]
+[A] Processed an message from layer5. Window[3,6) Message[data=g..]
+          TOLAYER3: packet being lost
+[A] Send packet to layer3. Window[3,7) Packet[seq=6,ack=111,check=2074,data=g..]
+
+EVENT time: 76.489410,  type: 2, fromlayer3  entity: 1
+================================ Inside B_input===================================
+[B] Receive a packet from layer3. Expected[4] Packet[seq=3,ack=111,check=2014,data=Z..]
+[B] Packet is corrupted. Expected[4] Packet[seq=3,ack=111,check=2014,data=Z..]
+          TOLAYER3: packet being corrupted
+================================ Outside B_input(packet) =========================
+
+EVENT time: 77.841560,  type: 1, fromlayer5  entity: 0
+[A] Received a message from layer5. Window[3,7) Message[data=h..]
+[A] Processed an message from layer5. Window[3,7) Message[data=h..]
+[A] Send packet to layer3. Window[3,0) Packet[seq=7,ack=111,check=2094,data=h..]
+
+EVENT time: 80.302200,  type: 2, fromlayer3  entity: 0
+================================ Inside A_input===================================
+[A] Receive ACK packet from layer3. Window[3,0) Packet[seq=3,ack=3,check=1906,data=d..]
+[A] ACK packet process successfully accomplished!!. Window[4,0) Packet[seq=3,ack=3,check=1906,data=d..]
+================================ Outside A_input===================================
+
+EVENT time: 80.314285,  type: 1, fromlayer5  entity: 0
+[A] Received a message from layer5. Window[4,0) Message[data=i..]
+[A] Processed an message from layer5. Window[4,0) Message[data=i..]
+          TOLAYER3: packet being corrupted
+[A] Send packet to layer3. Window[4,1) Packet[seq=0,ack=111,check=2106,data=i..]
+
+EVENT time: 82.108536,  type: 2, fromlayer3  entity: 0
+================================ Inside A_input===================================
+[A] Receive ACK packet from layer3. Window[4,1) Packet[seq=3,ack=3,check=1896,data=Z..]
+[A] Received duplicate ACK. Window[4,1) Packet[seq=3,ack=3,check=1896,data=Z..]
+[A] >Resend the packet again. Window[4,1) Packet[seq=4,ack=111,check=2034,data=e..]
+[A] >Resend the packet again. Window[4,1) Packet[seq=5,ack=111,check=2054,data=f..]
+          TOLAYER3: packet being lost
+[A] >Resend the packet again. Window[4,1) Packet[seq=6,ack=111,check=2074,data=g..]
+[A] >Resend the packet again. Window[4,1) Packet[seq=7,ack=111,check=2094,data=h..]
+[A] >Resend the packet again. Window[4,1) Packet[seq=0,ack=111,check=2106,data=i..]
+
+EVENT time: 82.739349,  type: 2, fromlayer3  entity: 1
+================================ Inside B_input===================================
+[B] Receive a packet from layer3. Expected[4] Packet[seq=4,ack=111,check=2034,data=Z..]
+[B] Packet is corrupted. Expected[4] Packet[seq=4,ack=111,check=2034,data=Z..]
+================================ Outside B_input(packet) =========================
+
+EVENT time: 88.404381,  type: 2, fromlayer3  entity: 0
+================================ Inside A_input===================================
+[A] Receive ACK packet from layer3. Window[4,1) Packet[seq=4,ack=3,check=1915,data=Z..]
+[A] Received duplicate ACK. Window[4,1) Packet[seq=4,ack=3,check=1915,data=Z..]
+          TOLAYER3: packet being corrupted
+[A] >Resend the packet again. Window[4,1) Packet[seq=4,ack=111,check=2034,data=e..]
+[A] >Resend the packet again. Window[4,1) Packet[seq=5,ack=111,check=2054,data=f..]
+[A] >Resend the packet again. Window[4,1) Packet[seq=6,ack=111,check=2074,data=g..]
+[A] >Resend the packet again. Window[4,1) Packet[seq=7,ack=111,check=2094,data=h..]
+          TOLAYER3: packet being lost
+[A] >Resend the packet again. Window[4,1) Packet[seq=0,ack=111,check=2106,data=i..]
+
+EVENT time: 91.941933,  type: 1, fromlayer5  entity: 0
+[A] Received a message from layer5. Window[4,1) Message[data=j..]
+[A] Processed an message from layer5. Window[4,1) Message[data=j..]
+          TOLAYER3: packet being lost
+[A] Send packet to layer3. Window[4,2) Packet[seq=1,ack=111,check=2126,data=j..]
+
+EVENT time: 92.135429,  type: 2, fromlayer3  entity: 1
+================================ Inside B_input===================================
+[B] Receive a packet from layer3. Expected[4] Packet[seq=3,ack=111,check=2014,data=d..]
+[B] Duplicated packet detected. Expected[4] Packet[seq=3,ack=111,check=2014,data=d..]
+          TOLAYER3: packet being corrupted
+================================ Outside B_input(packet) =========================
+
+EVENT time: 98.036385,  type: 2, fromlayer3  entity: 0
+================================ Inside A_input===================================
+[A] Receive ACK packet from layer3. Window[4,2) Packet[seq=3,ack=3,check=1906,data=Z..]
+[A] ACK packet is corrupted. Window[4,2) Packet[seq=3,ack=3,check=1906,data=Z..]
+
+EVENT time: 101.368195,  type: 2, fromlayer3  entity: 1
+================================ Inside B_input===================================
+[B] Receive a packet from layer3. Expected[4] Packet[seq=4,ack=111,check=2034,data=e..]
+[B] Send packet to layer5. Expected[5] Packet[seq=4,ack=111,check=2034,data=e..]
+          TOLAYER3: packet being corrupted
+================================ Outside B_input(packet) =========================
+
+EVENT time: 104.385239,  type: 2, fromlayer3  entity: 1
+================================ Inside B_input===================================
+[B] Receive a packet from layer3. Expected[5] Packet[seq=7,ack=111,check=2094,data=h..]
+[B] Disordered packet received. Expected[5] Packet[seq=7,ack=111,check=2094,data=h..]
+          TOLAYER3: packet being corrupted
+================================ Outside B_input(packet) =========================
+
+EVENT time: 108.404381,  type: 0, timerinterrupt   entity: 0
+[A] Time interrupt occur.Window[4,2)
+[A] >Resend the packet again. Window[4,2) Packet[seq=4,ack=111,check=2034,data=e..]
+          TOLAYER3: packet being corrupted
+[A] >Resend the packet again. Window[4,2) Packet[seq=5,ack=111,check=2054,data=f..]
+          TOLAYER3: packet being corrupted
+[A] >Resend the packet again. Window[4,2) Packet[seq=6,ack=111,check=2074,data=g..]
+[A] >Resend the packet again. Window[4,2) Packet[seq=7,ack=111,check=2094,data=h..]
+          TOLAYER3: packet being lost
+[A] >Resend the packet again. Window[4,2) Packet[seq=0,ack=111,check=2106,data=i..]
+          TOLAYER3: packet being corrupted
+[A] >Resend the packet again. Window[4,2) Packet[seq=1,ack=111,check=2126,data=j..]
+
+EVENT time: 109.857841,  type: 2, fromlayer3  entity: 1
+================================ Inside B_input===================================
+[B] Receive a packet from layer3. Expected[5] Packet[seq=0,ack=111,check=2106,data=Z..]
+[B] Packet is corrupted. Expected[5] Packet[seq=0,ack=111,check=2106,data=Z..]
+================================ Outside B_input(packet) =========================
+
+EVENT time: 110.191315,  type: 2, fromlayer3  entity: 0
+================================ Inside A_input===================================
+[A] Receive ACK packet from layer3. Window[4,2) Packet[seq=4,ack=4,check=1927,data=Z..]
+[A] ACK packet is corrupted. Window[4,2) Packet[seq=4,ack=4,check=1927,data=Z..]
+
+EVENT time: 111.775185,  type: 2, fromlayer3  entity: 0
+================================ Inside A_input===================================
+[A] Receive ACK packet from layer3. Window[4,2) Packet[seq=7,ack=4,check=1987,data=Z..]
+[A] ACK packet is corrupted. Window[4,2) Packet[seq=7,ack=4,check=1987,data=Z..]
+
+EVENT time: 115.244698,  type: 2, fromlayer3  entity: 1
+================================ Inside B_input===================================
+[B] Receive a packet from layer3. Expected[5] Packet[seq=4,ack=111,check=2034,data=e..]
+[B] Duplicated packet detected. Expected[5] Packet[seq=4,ack=111,check=2034,data=e..]
+================================ Outside B_input(packet) =========================
+
+EVENT time: 116.948936,  type: 2, fromlayer3  entity: 1
+================================ Inside B_input===================================
+[B] Receive a packet from layer3. Expected[5] Packet[seq=5,ack=111,check=2054,data=f..]
+[B] Send packet to layer5. Expected[6] Packet[seq=5,ack=111,check=2054,data=f..]
+================================ Outside B_input(packet) =========================
+
+EVENT time: 119.343704,  type: 2, fromlayer3  entity: 0
+================================ Inside A_input===================================
+[A] Receive ACK packet from layer3. Window[4,2) Packet[seq=0,ack=4,check=1984,data=Z..]
+[A] ACK packet process successfully accomplished!!. Window[5,2) Packet[seq=0,ack=4,check=1984,data=Z..]
+================================ Outside A_input===================================
+
+EVENT time: 108.404381,  type: 0, timerinterrupt   entity: 0
+[A] Time interrupt occur.Window[5,2)
+[A] >Resend the packet again. Window[5,2) Packet[seq=5,ack=111,check=2054,data=f..]
+[A] >Resend the packet again. Window[5,2) Packet[seq=6,ack=111,check=2074,data=g..]
+          TOLAYER3: packet being corrupted
+[A] >Resend the packet again. Window[5,2) Packet[seq=7,ack=111,check=2094,data=h..]
+[A] >Resend the packet again. Window[5,2) Packet[seq=0,ack=111,check=2106,data=i..]
+[A] >Resend the packet again. Window[5,2) Packet[seq=1,ack=111,check=2126,data=j..]
+
+EVENT time: 123.517410,  type: 2, fromlayer3  entity: 0
+================================ Inside A_input===================================
+[A] Receive ACK packet from layer3. Window[5,2) Packet[seq=4,ack=4,check=1927,data=e..]
+[A] Received duplicate ACK. Window[5,2) Packet[seq=4,ack=4,check=1927,data=e..]
+[A] >Resend the packet again. Window[5,2) Packet[seq=5,ack=111,check=2054,data=f..]
+[A] >Resend the packet again. Window[5,2) Packet[seq=6,ack=111,check=2074,data=g..]
+[A] >Resend the packet again. Window[5,2) Packet[seq=7,ack=111,check=2094,data=h..]
+          TOLAYER3: packet being corrupted
+[A] >Resend the packet again. Window[5,2) Packet[seq=0,ack=111,check=2106,data=i..]
+[A] >Resend the packet again. Window[5,2) Packet[seq=1,ack=111,check=2126,data=j..]
+
+EVENT time: 124.906799,  type: 2, fromlayer3  entity: 1
+================================ Inside B_input===================================
+[B] Receive a packet from layer3. Expected[6] Packet[seq=7,ack=111,check=2094,data=h..]
+[B] Disordered packet received. Expected[6] Packet[seq=7,ack=111,check=2094,data=h..]
+================================ Outside B_input(packet) =========================
+
+EVENT time: 129.299255,  type: 2, fromlayer3  entity: 1
+================================ Inside B_input===================================
+[B] Receive a packet from layer3. Expected[6] Packet[seq=0,ack=111,check=2106,data=i..]
+[B] Duplicated packet detected. Expected[6] Packet[seq=0,ack=111,check=2106,data=i..]
+================================ Outside B_input(packet) =========================
+
+EVENT time: 131.119415,  type: 2, fromlayer3  entity: 0
+================================ Inside A_input===================================
+[A] Receive ACK packet from layer3. Window[5,2) Packet[seq=5,ack=5,check=1948,data=f..]
+[A] ACK packet process successfully accomplished!!. Window[6,2) Packet[seq=5,ack=5,check=1948,data=f..]
+================================ Outside A_input===================================
+
+EVENT time: 132.525040,  type: 2, fromlayer3  entity: 0
+================================ Inside A_input===================================
+[A] Receive ACK packet from layer3. Window[6,2) Packet[seq=7,ack=5,check=1988,data=h..]
+[A] Received duplicate ACK. Window[6,2) Packet[seq=7,ack=5,check=1988,data=h..]
+[A] >Resend the packet again. Window[6,2) Packet[seq=6,ack=111,check=2074,data=g..]
+[A] >Resend the packet again. Window[6,2) Packet[seq=7,ack=111,check=2094,data=h..]
+[A] >Resend the packet again. Window[6,2) Packet[seq=0,ack=111,check=2106,data=i..]
+          TOLAYER3: packet being lost
+[A] >Resend the packet again. Window[6,2) Packet[seq=1,ack=111,check=2126,data=j..]
+
+EVENT time: 133.669373,  type: 2, fromlayer3  entity: 0
+================================ Inside A_input===================================
+[A] Receive ACK packet from layer3. Window[6,2) Packet[seq=0,ack=5,check=2000,data=i..]
+[A] Received duplicate ACK. Window[6,2) Packet[seq=0,ack=5,check=2000,data=i..]
+          TOLAYER3: packet being corrupted
+[A] >Resend the packet again. Window[6,2) Packet[seq=6,ack=111,check=2074,data=g..]
+[A] >Resend the packet again. Window[6,2) Packet[seq=7,ack=111,check=2094,data=h..]
+[A] >Resend the packet again. Window[6,2) Packet[seq=0,ack=111,check=2106,data=i..]
+          TOLAYER3: packet being corrupted
+[A] >Resend the packet again. Window[6,2) Packet[seq=1,ack=111,check=2126,data=j..]
+
+EVENT time: 135.996094,  type: 2, fromlayer3  entity: 1
+================================ Inside B_input===================================
+[B] Receive a packet from layer3. Expected[6] Packet[seq=4,ack=111,check=2034,data=Z..]
+[B] Packet is corrupted. Expected[6] Packet[seq=4,ack=111,check=2034,data=Z..]
+          TOLAYER3: packet being corrupted
+================================ Outside B_input(packet) =========================
+
+EVENT time: 140.427078,  type: 2, fromlayer3  entity: 0
+================================ Inside A_input===================================
+[A] Receive ACK packet from layer3. Window[6,2) Packet[seq=4,ack=5,check=1917,data=Z..]
+[A] Received duplicate ACK. Window[6,2) Packet[seq=4,ack=5,check=1917,data=Z..]
+          TOLAYER3: packet being lost
+[A] >Resend the packet again. Window[6,2) Packet[seq=6,ack=111,check=2074,data=g..]
+          TOLAYER3: packet being lost
+[A] >Resend the packet again. Window[6,2) Packet[seq=7,ack=111,check=2094,data=h..]
+[A] >Resend the packet again. Window[6,2) Packet[seq=0,ack=111,check=2106,data=i..]
+          TOLAYER3: packet being lost
+[A] >Resend the packet again. Window[6,2) Packet[seq=1,ack=111,check=2126,data=j..]
+
+EVENT time: 145.484268,  type: 2, fromlayer3  entity: 1
+================================ Inside B_input===================================
+[B] Receive a packet from layer3. Expected[6] Packet[seq=5,ack=111,check=2054,data=f..]
+[B] Duplicated packet detected. Expected[6] Packet[seq=5,ack=111,check=2054,data=f..]
+          TOLAYER3: packet being corrupted
+================================ Outside B_input(packet) =========================
+
+EVENT time: 147.989487,  type: 2, fromlayer3  entity: 1
+================================ Inside B_input===================================
+[B] Receive a packet from layer3. Expected[6] Packet[seq=6,ack=111,check=2074,data=g..]
+[B] Send packet to layer5. Expected[7] Packet[seq=6,ack=111,check=2074,data=g..]
+          TOLAYER3: packet being lost
+================================ Outside B_input(packet) =========================
+
+EVENT time: 151.165573,  type: 2, fromlayer3  entity: 0
+================================ Inside A_input===================================
+[A] Receive ACK packet from layer3. Window[6,2) Packet[seq=5,ack=999999,check=1948,data=f..]
+[A] ACK packet is corrupted. Window[6,2) Packet[seq=5,ack=999999,check=1948,data=f..]
+
+EVENT time: 154.248764,  type: 2, fromlayer3  entity: 1
+================================ Inside B_input===================================
+[B] Receive a packet from layer3. Expected[7] Packet[seq=7,ack=111,check=2094,data=h..]
+[B] Send packet to layer5. Expected[0] Packet[seq=7,ack=111,check=2094,data=h..]
+          TOLAYER3: packet being corrupted
+================================ Outside B_input(packet) =========================
+
+EVENT time: 156.095963,  type: 2, fromlayer3  entity: 0
+================================ Inside A_input===================================
+[A] Receive ACK packet from layer3. Window[6,2) Packet[seq=7,ack=7,check=1990,data=Z..]
+[A] ACK packet is corrupted. Window[6,2) Packet[seq=7,ack=7,check=1990,data=Z..]
+
+EVENT time: 159.495895,  type: 2, fromlayer3  entity: 1
+================================ Inside B_input===================================
+[B] Receive a packet from layer3. Expected[0] Packet[seq=4,ack=111,check=2034,data=e..]
+[B] Disordered packet received. Expected[0] Packet[seq=4,ack=111,check=2034,data=e..]
+          TOLAYER3: packet being lost
+================================ Outside B_input(packet) =========================
+
+EVENT time: 160.427078,  type: 0, timerinterrupt   entity: 0
+[A] Time interrupt occur.Window[6,2)
+[A] >Resend the packet again. Window[6,2) Packet[seq=6,ack=111,check=2074,data=g..]
+[A] >Resend the packet again. Window[6,2) Packet[seq=7,ack=111,check=2094,data=h..]
+          TOLAYER3: packet being lost
+[A] >Resend the packet again. Window[6,2) Packet[seq=0,ack=111,check=2106,data=i..]
+          TOLAYER3: packet being corrupted
+[A] >Resend the packet again. Window[6,2) Packet[seq=1,ack=111,check=2126,data=j..]
+
+EVENT time: 168.439636,  type: 2, fromlayer3  entity: 1
+================================ Inside B_input===================================
+[B] Receive a packet from layer3. Expected[0] Packet[seq=5,ack=111,check=2054,data=Z..]
+[B] Packet is corrupted. Expected[0] Packet[seq=5,ack=111,check=2054,data=Z..]
+================================ Outside B_input(packet) =========================
+
+EVENT time: 174.235168,  type: 2, fromlayer3  entity: 0
+================================ Inside A_input===================================
+[A] Receive ACK packet from layer3. Window[6,2) Packet[seq=5,ack=7,check=1938,data=Z..]
+[A] ACK packet process successfully accomplished!!. Window[0,2) Packet[seq=5,ack=7,check=1938,data=Z..]
+================================ Outside A_input===================================
+
+EVENT time: 160.427078,  type: 0, timerinterrupt   entity: 0
+[A] Time interrupt occur.Window[0,2)
+[A] >Resend the packet again. Window[0,2) Packet[seq=0,ack=111,check=2106,data=i..]
+[A] >Resend the packet again. Window[0,2) Packet[seq=1,ack=111,check=2126,data=j..]
+
+EVENT time: 177.762085,  type: 2, fromlayer3  entity: 1
+================================ Inside B_input===================================
+[B] Receive a packet from layer3. Expected[0] Packet[seq=6,ack=111,check=2074,data=Z..]
+[B] Packet is corrupted. Expected[0] Packet[seq=6,ack=111,check=2074,data=Z..]
+================================ Outside B_input(packet) =========================
+
+EVENT time: 180.427078,  type: 0, timerinterrupt   entity: 0
+[A] Time interrupt occur.Window[0,2)
+[A] >Resend the packet again. Window[0,2) Packet[seq=0,ack=111,check=2106,data=i..]
+[A] >Resend the packet again. Window[0,2) Packet[seq=1,ack=111,check=2126,data=j..]
+
+EVENT time: 180.758469,  type: 2, fromlayer3  entity: 1
+================================ Inside B_input===================================
+[B] Receive a packet from layer3. Expected[0] Packet[seq=7,ack=111,check=2094,data=h..]
+[B] Disordered packet received. Expected[0] Packet[seq=7,ack=111,check=2094,data=h..]
+================================ Outside B_input(packet) =========================
+
+EVENT time: 181.907501,  type: 2, fromlayer3  entity: 1
+================================ Inside B_input===================================
+[B] Receive a packet from layer3. Expected[0] Packet[seq=1,ack=999999,check=2126,data=j..]
+[B] Packet is corrupted. Expected[0] Packet[seq=1,ack=999999,check=2126,data=j..]
+================================ Outside B_input(packet) =========================
+
+EVENT time: 181.938599,  type: 2, fromlayer3  entity: 0
+================================ Inside A_input===================================
+[A] Receive ACK packet from layer3. Window[0,2) Packet[seq=6,ack=7,check=1957,data=Z..]
+[A] Received duplicate ACK. Window[0,2) Packet[seq=6,ack=7,check=1957,data=Z..]
+[A] >Resend the packet again. Window[0,2) Packet[seq=0,ack=111,check=2106,data=i..]
+          TOLAYER3: packet being lost
+[A] >Resend the packet again. Window[0,2) Packet[seq=1,ack=111,check=2126,data=j..]
+
+EVENT time: 188.005951,  type: 2, fromlayer3  entity: 0
+================================ Inside A_input===================================
+[A] Receive ACK packet from layer3. Window[0,2) Packet[seq=7,ack=7,check=1990,data=h..]
+[A] Received duplicate ACK. Window[0,2) Packet[seq=7,ack=7,check=1990,data=h..]
+[A] >Resend the packet again. Window[0,2) Packet[seq=0,ack=111,check=2106,data=i..]
+[A] >Resend the packet again. Window[0,2) Packet[seq=1,ack=111,check=2126,data=j..]
+
+EVENT time: 189.908401,  type: 2, fromlayer3  entity: 0
+================================ Inside A_input===================================
+[A] Receive ACK packet from layer3. Window[0,2) Packet[seq=1,ack=7,check=2022,data=j..]
+[A] Received duplicate ACK. Window[0,2) Packet[seq=1,ack=7,check=2022,data=j..]
+[A] >Resend the packet again. Window[0,2) Packet[seq=0,ack=111,check=2106,data=i..]
+[A] >Resend the packet again. Window[0,2) Packet[seq=1,ack=111,check=2126,data=j..]
+
+EVENT time: 191.038391,  type: 2, fromlayer3  entity: 1
+================================ Inside B_input===================================
+[B] Receive a packet from layer3. Expected[0] Packet[seq=5,ack=111,check=2054,data=f..]
+[B] Disordered packet received. Expected[0] Packet[seq=5,ack=111,check=2054,data=f..]
+          TOLAYER3: packet being lost
+================================ Outside B_input(packet) =========================
+
+EVENT time: 195.416412,  type: 2, fromlayer3  entity: 1
+================================ Inside B_input===================================
+[B] Receive a packet from layer3. Expected[0] Packet[seq=6,ack=111,check=2074,data=g..]
+[B] Disordered packet received. Expected[0] Packet[seq=6,ack=111,check=2074,data=g..]
+================================ Outside B_input(packet) =========================
+
+EVENT time: 198.738174,  type: 2, fromlayer3  entity: 1
+================================ Inside B_input===================================
+[B] Receive a packet from layer3. Expected[0] Packet[seq=7,ack=111,check=2094,data=Z..]
+[B] Packet is corrupted. Expected[0] Packet[seq=7,ack=111,check=2094,data=Z..]
+================================ Outside B_input(packet) =========================
+
+EVENT time: 200.334656,  type: 2, fromlayer3  entity: 1
+================================ Inside B_input===================================
+[B] Receive a packet from layer3. Expected[0] Packet[seq=0,ack=111,check=2106,data=i..]
+[B] Send packet to layer5. Expected[1] Packet[seq=0,ack=111,check=2106,data=i..]
+          TOLAYER3: packet being corrupted
+================================ Outside B_input(packet) =========================
+
+EVENT time: 200.589966,  type: 2, fromlayer3  entity: 0
+================================ Inside A_input===================================
+[A] Receive ACK packet from layer3. Window[0,2) Packet[seq=6,ack=7,check=1970,data=g..]
+[A] Received duplicate ACK. Window[0,2) Packet[seq=6,ack=7,check=1970,data=g..]
+[A] >Resend the packet again. Window[0,2) Packet[seq=0,ack=111,check=2106,data=i..]
+[A] >Resend the packet again. Window[0,2) Packet[seq=1,ack=111,check=2126,data=j..]
+
+EVENT time: 203.896149,  type: 2, fromlayer3  entity: 0
+================================ Inside A_input===================================
+[A] Receive ACK packet from layer3. Window[0,2) Packet[seq=7,ack=7,check=1976,data=Z..]
+[A] Received duplicate ACK. Window[0,2) Packet[seq=7,ack=7,check=1976,data=Z..]
+[A] >Resend the packet again. Window[0,2) Packet[seq=0,ack=111,check=2106,data=i..]
+[A] >Resend the packet again. Window[0,2) Packet[seq=1,ack=111,check=2126,data=j..]
+
+EVENT time: 204.052872,  type: 2, fromlayer3  entity: 1
+================================ Inside B_input===================================
+[B] Receive a packet from layer3. Expected[1] Packet[seq=1,ack=111,check=2126,data=j..]
+[B] Send packet to layer5. Expected[2] Packet[seq=1,ack=111,check=2126,data=j..]
+          TOLAYER3: packet being lost
+================================ Outside B_input(packet) =========================
+
+EVENT time: 205.354034,  type: 2, fromlayer3  entity: 0
+================================ Inside A_input===================================
+[A] Receive ACK packet from layer3. Window[0,2) Packet[seq=0,ack=0,check=1995,data=Z..]
+[A] ACK packet is corrupted. Window[0,2) Packet[seq=0,ack=0,check=1995,data=Z..]
+
+EVENT time: 208.924545,  type: 2, fromlayer3  entity: 1
+================================ Inside B_input===================================
+[B] Receive a packet from layer3. Expected[2] Packet[seq=5,ack=111,check=2054,data=f..]
+[B] Disordered packet received. Expected[2] Packet[seq=5,ack=111,check=2054,data=f..]
+================================ Outside B_input(packet) =========================
+
+EVENT time: 211.384567,  type: 2, fromlayer3  entity: 0
+================================ Inside A_input===================================
+[A] Receive ACK packet from layer3. Window[0,2) Packet[seq=5,ack=1,check=1944,data=f..]
+[A] ACK packet process successfully accomplished!!. Window[2,2) Packet[seq=5,ack=1,check=1944,data=f..]
+================================ Outside A_input===================================
+
+EVENT time: 215.463776,  type: 2, fromlayer3  entity: 1
+================================ Inside B_input===================================
+[B] Receive a packet from layer3. Expected[2] Packet[seq=6,ack=111,check=2074,data=g..]
+[B] Disordered packet received. Expected[2] Packet[seq=6,ack=111,check=2074,data=g..]
+================================ Outside B_input(packet) =========================
+
+EVENT time: 219.571518,  type: 2, fromlayer3  entity: 1
+================================ Inside B_input===================================
+[B] Receive a packet from layer3. Expected[2] Packet[seq=7,ack=111,check=2094,data=h..]
+[B] Disordered packet received. Expected[2] Packet[seq=7,ack=111,check=2094,data=h..]
+================================ Outside B_input(packet) =========================
+
+EVENT time: 221.030914,  type: 2, fromlayer3  entity: 0
+================================ Inside A_input===================================
+[A] Receive ACK packet from layer3. Window[2,2) Packet[seq=6,ack=1,check=1964,data=g..]
+[A] Received duplicate ACK. Window[2,2) Packet[seq=6,ack=1,check=1964,data=g..]
+
+EVENT time: 226.852966,  type: 2, fromlayer3  entity: 1
+================================ Inside B_input===================================
+[B] Receive a packet from layer3. Expected[2] Packet[seq=0,ack=111,check=2106,data=Z..]
+[B] Packet is corrupted. Expected[2] Packet[seq=0,ack=111,check=2106,data=Z..]
+          TOLAYER3: packet being lost
+================================ Outside B_input(packet) =========================
+
+EVENT time: 227.982666,  type: 2, fromlayer3  entity: 0
+================================ Inside A_input===================================
+[A] Receive ACK packet from layer3. Window[2,2) Packet[seq=7,ack=1,check=1984,data=h..]
+[A] Received duplicate ACK. Window[2,2) Packet[seq=7,ack=1,check=1984,data=h..]
+
+EVENT time: 233.358353,  type: 2, fromlayer3  entity: 1
+================================ Inside B_input===================================
+[B] Receive a packet from layer3. Expected[2] Packet[seq=1,ack=111,check=2126,data=j..]
+[B] Duplicated packet detected. Expected[2] Packet[seq=1,ack=111,check=2126,data=j..]
+================================ Outside B_input(packet) =========================
+
+EVENT time: 235.575180,  type: 2, fromlayer3  entity: 0
+================================ Inside A_input===================================
+[A] Receive ACK packet from layer3. Window[2,2) Packet[seq=1,ack=1,check=2016,data=j..]
+[A] Received duplicate ACK. Window[2,2) Packet[seq=1,ack=1,check=2016,data=j..]
+
+EVENT time: 235.776718,  type: 2, fromlayer3  entity: 1
+================================ Inside B_input===================================
+[B] Receive a packet from layer3. Expected[2] Packet[seq=6,ack=111,check=2074,data=g..]
+[B] Disordered packet received. Expected[2] Packet[seq=6,ack=111,check=2074,data=g..]
+          TOLAYER3: packet being lost
+================================ Outside B_input(packet) =========================
+
+EVENT time: 238.791565,  type: 2, fromlayer3  entity: 1
+================================ Inside B_input===================================
+[B] Receive a packet from layer3. Expected[2] Packet[seq=7,ack=111,check=2094,data=h..]
+[B] Disordered packet received. Expected[2] Packet[seq=7,ack=111,check=2094,data=h..]
+          TOLAYER3: packet being lost
+================================ Outside B_input(packet) =========================
+
+EVENT time: 244.524612,  type: 2, fromlayer3  entity: 1
+================================ Inside B_input===================================
+[B] Receive a packet from layer3. Expected[2] Packet[seq=0,ack=111,check=2106,data=i..]
+[B] Duplicated packet detected. Expected[2] Packet[seq=0,ack=111,check=2106,data=i..]
+================================ Outside B_input(packet) =========================
+
+EVENT time: 246.658264,  type: 2, fromlayer3  entity: 0
+================================ Inside A_input===================================
+[A] Receive ACK packet from layer3. Window[2,2) Packet[seq=0,ack=1,check=1996,data=i..]
+[A] Received duplicate ACK. Window[2,2) Packet[seq=0,ack=1,check=1996,data=i..]
+
+EVENT time: 248.395950,  type: 2, fromlayer3  entity: 1
+================================ Inside B_input===================================
+[B] Receive a packet from layer3. Expected[2] Packet[seq=6,ack=111,check=2074,data=Z..]
+[B] Packet is corrupted. Expected[2] Packet[seq=6,ack=111,check=2074,data=Z..]
+================================ Outside B_input(packet) =========================
+
+EVENT time: 252.520920,  type: 2, fromlayer3  entity: 1
+================================ Inside B_input===================================
+[B] Receive a packet from layer3. Expected[2] Packet[seq=7,ack=111,check=2094,data=h..]
+[B] Disordered packet received. Expected[2] Packet[seq=7,ack=111,check=2094,data=h..]
+          TOLAYER3: packet being lost
+================================ Outside B_input(packet) =========================
+
+EVENT time: 254.083298,  type: 2, fromlayer3  entity: 0
+================================ Inside A_input===================================
+[A] Receive ACK packet from layer3. Window[2,2) Packet[seq=6,ack=1,check=1951,data=Z..]
+[A] Received duplicate ACK. Window[2,2) Packet[seq=6,ack=1,check=1951,data=Z..]
+
+EVENT time: 262.446350,  type: 2, fromlayer3  entity: 1
+================================ Inside B_input===================================
+[B] Receive a packet from layer3. Expected[2] Packet[seq=0,ack=111,check=2106,data=i..]
+[B] Duplicated packet detected. Expected[2] Packet[seq=0,ack=111,check=2106,data=i..]
+================================ Outside B_input(packet) =========================
+
+EVENT time: 264.860077,  type: 2, fromlayer3  entity: 1
+================================ Inside B_input===================================
+[B] Receive a packet from layer3. Expected[2] Packet[seq=1,ack=111,check=2126,data=Z..]
+[B] Packet is corrupted. Expected[2] Packet[seq=1,ack=111,check=2126,data=Z..]
+================================ Outside B_input(packet) =========================
+
+EVENT time: 266.397583,  type: 2, fromlayer3  entity: 1
+================================ Inside B_input===================================
+[B] Receive a packet from layer3. Expected[2] Packet[seq=0,ack=111,check=2106,data=i..]
+[B] Duplicated packet detected. Expected[2] Packet[seq=0,ack=111,check=2106,data=i..]
+================================ Outside B_input(packet) =========================
+
+EVENT time: 267.959442,  type: 2, fromlayer3  entity: 0
+================================ Inside A_input===================================
+[A] Receive ACK packet from layer3. Window[2,2) Packet[seq=0,ack=1,check=1996,data=i..]
+[A] Received duplicate ACK. Window[2,2) Packet[seq=0,ack=1,check=1996,data=i..]
+
+EVENT time: 269.599121,  type: 2, fromlayer3  entity: 0
+================================ Inside A_input===================================
+[A] Receive ACK packet from layer3. Window[2,2) Packet[seq=1,ack=1,check=2000,data=Z..]
+[A] Received duplicate ACK. Window[2,2) Packet[seq=1,ack=1,check=2000,data=Z..]
+
+EVENT time: 275.111084,  type: 2, fromlayer3  entity: 1
+================================ Inside B_input===================================
+[B] Receive a packet from layer3. Expected[2] Packet[seq=6,ack=111,check=2074,data=g..]
+[B] Disordered packet received. Expected[2] Packet[seq=6,ack=111,check=2074,data=g..]
+================================ Outside B_input(packet) =========================
+
+EVENT time: 275.550568,  type: 2, fromlayer3  entity: 0
+================================ Inside A_input===================================
+[A] Receive ACK packet from layer3. Window[2,2) Packet[seq=0,ack=1,check=1996,data=i..]
+[A] Received duplicate ACK. Window[2,2) Packet[seq=0,ack=1,check=1996,data=i..]
+
+EVENT time: 277.238770,  type: 2, fromlayer3  entity: 1
+================================ Inside B_input===================================
+[B] Receive a packet from layer3. Expected[2] Packet[seq=7,ack=111,check=2094,data=h..]
+[B] Disordered packet received. Expected[2] Packet[seq=7,ack=111,check=2094,data=h..]
+          TOLAYER3: packet being corrupted
+================================ Outside B_input(packet) =========================
+
+EVENT time: 282.962036,  type: 2, fromlayer3  entity: 0
+================================ Inside A_input===================================
+[A] Receive ACK packet from layer3. Window[2,2) Packet[seq=6,ack=1,check=1964,data=g..]
+[A] Received duplicate ACK. Window[2,2) Packet[seq=6,ack=1,check=1964,data=g..]
+
+EVENT time: 284.413025,  type: 2, fromlayer3  entity: 1
+================================ Inside B_input===================================
+[B] Receive a packet from layer3. Expected[2] Packet[seq=1,ack=111,check=2126,data=Z..]
+[B] Packet is corrupted. Expected[2] Packet[seq=1,ack=111,check=2126,data=Z..]
+================================ Outside B_input(packet) =========================
+
+EVENT time: 285.940643,  type: 2, fromlayer3  entity: 0
+================================ Inside A_input===================================
+[A] Receive ACK packet from layer3. Window[2,2) Packet[seq=7,ack=999999,check=1984,data=h..]
+[A] ACK packet is corrupted. Window[2,2) Packet[seq=7,ack=999999,check=1984,data=h..]
+
+EVENT time: 291.031921,  type: 2, fromlayer3  entity: 1
+================================ Inside B_input===================================
+[B] Receive a packet from layer3. Expected[2] Packet[seq=0,ack=111,check=2106,data=i..]
+[B] Duplicated packet detected. Expected[2] Packet[seq=0,ack=111,check=2106,data=i..]
+          TOLAYER3: packet being corrupted
+================================ Outside B_input(packet) =========================
+
+EVENT time: 293.067932,  type: 2, fromlayer3  entity: 0
+================================ Inside A_input===================================
+[A] Receive ACK packet from layer3. Window[2,2) Packet[seq=1,ack=1,check=2000,data=Z..]
+[A] Received duplicate ACK. Window[2,2) Packet[seq=1,ack=1,check=2000,data=Z..]
+
+EVENT time: 298.188324,  type: 2, fromlayer3  entity: 1
+================================ Inside B_input===================================
+[B] Receive a packet from layer3. Expected[2] Packet[seq=1,ack=111,check=2126,data=j..]
+[B] Duplicated packet detected. Expected[2] Packet[seq=1,ack=111,check=2126,data=j..]
+================================ Outside B_input(packet) =========================
+
+EVENT time: 301.412048,  type: 2, fromlayer3  entity: 0
+================================ Inside A_input===================================
+[A] Receive ACK packet from layer3. Window[2,2) Packet[seq=0,ack=1,check=1996,data=Z..]
+[A] ACK packet is corrupted. Window[2,2) Packet[seq=0,ack=1,check=1996,data=Z..]
+
+EVENT time: 301.698364,  type: 2, fromlayer3  entity: 1
+================================ Inside B_input===================================
+[B] Receive a packet from layer3. Expected[2] Packet[seq=0,ack=111,check=2106,data=i..]
+[B] Duplicated packet detected. Expected[2] Packet[seq=0,ack=111,check=2106,data=i..]
+================================ Outside B_input(packet) =========================
+
+EVENT time: 306.055603,  type: 2, fromlayer3  entity: 1
+================================ Inside B_input===================================
+[B] Receive a packet from layer3. Expected[2] Packet[seq=1,ack=111,check=2126,data=j..]
+[B] Duplicated packet detected. Expected[2] Packet[seq=1,ack=111,check=2126,data=j..]
+================================ Outside B_input(packet) =========================
+
+EVENT time: 306.882874,  type: 2, fromlayer3  entity: 0
+================================ Inside A_input===================================
+[A] Receive ACK packet from layer3. Window[2,2) Packet[seq=1,ack=1,check=2016,data=j..]
+[A] Received duplicate ACK. Window[2,2) Packet[seq=1,ack=1,check=2016,data=j..]
+
+EVENT time: 309.957703,  type: 2, fromlayer3  entity: 0
+================================ Inside A_input===================================
+[A] Receive ACK packet from layer3. Window[2,2) Packet[seq=0,ack=1,check=1996,data=i..]
+[A] Received duplicate ACK. Window[2,2) Packet[seq=0,ack=1,check=1996,data=i..]
+
+EVENT time: 312.718567,  type: 2, fromlayer3  entity: 1
+================================ Inside B_input===================================
+[B] Receive a packet from layer3. Expected[2] Packet[seq=0,ack=111,check=2106,data=i..]
+[B] Duplicated packet detected. Expected[2] Packet[seq=0,ack=111,check=2106,data=i..]
+          TOLAYER3: packet being corrupted
+================================ Outside B_input(packet) =========================
+
+EVENT time: 313.138641,  type: 2, fromlayer3  entity: 0
+================================ Inside A_input===================================
+[A] Receive ACK packet from layer3. Window[2,2) Packet[seq=1,ack=1,check=2016,data=j..]
+[A] Received duplicate ACK. Window[2,2) Packet[seq=1,ack=1,check=2016,data=j..]
+
+EVENT time: 314.760529,  type: 2, fromlayer3  entity: 1
+================================ Inside B_input===================================
+[B] Receive a packet from layer3. Expected[2] Packet[seq=0,ack=111,check=2106,data=i..]
+[B] Duplicated packet detected. Expected[2] Packet[seq=0,ack=111,check=2106,data=i..]
+          TOLAYER3: packet being lost
+================================ Outside B_input(packet) =========================
+
+EVENT time: 318.605286,  type: 2, fromlayer3  entity: 0
+================================ Inside A_input===================================
+[A] Receive ACK packet from layer3. Window[2,2) Packet[seq=0,ack=1,check=1996,data=Z..]
+[A] ACK packet is corrupted. Window[2,2) Packet[seq=0,ack=1,check=1996,data=Z..]
+
+EVENT time: 321.598022,  type: 2, fromlayer3  entity: 1
+================================ Inside B_input===================================
+[B] Receive a packet from layer3. Expected[2] Packet[seq=1,ack=111,check=2126,data=j..]
+[B] Duplicated packet detected. Expected[2] Packet[seq=1,ack=111,check=2126,data=j..]
+================================ Outside B_input(packet) =========================
+
+EVENT time: 325.054413,  type: 2, fromlayer3  entity: 1
+================================ Inside B_input===================================
+[B] Receive a packet from layer3. Expected[2] Packet[seq=0,ack=111,check=2106,data=i..]
+[B] Duplicated packet detected. Expected[2] Packet[seq=0,ack=111,check=2106,data=i..]
+================================ Outside B_input(packet) =========================
+
+EVENT time: 330.740845,  type: 2, fromlayer3  entity: 0
+================================ Inside A_input===================================
+[A] Receive ACK packet from layer3. Window[2,2) Packet[seq=1,ack=1,check=2016,data=j..]
+[A] Received duplicate ACK. Window[2,2) Packet[seq=1,ack=1,check=2016,data=j..]
+
+EVENT time: 334.667206,  type: 2, fromlayer3  entity: 1
+================================ Inside B_input===================================
+[B] Receive a packet from layer3. Expected[2] Packet[seq=1,ack=111,check=2126,data=j..]
+[B] Duplicated packet detected. Expected[2] Packet[seq=1,ack=111,check=2126,data=j..]
+================================ Outside B_input(packet) =========================
+
+EVENT time: 337.295135,  type: 2, fromlayer3  entity: 0
+================================ Inside A_input===================================
+[A] Receive ACK packet from layer3. Window[2,2) Packet[seq=0,ack=1,check=1996,data=i..]
+[A] Received duplicate ACK. Window[2,2) Packet[seq=0,ack=1,check=1996,data=i..]
+
+EVENT time: 339.220917,  type: 2, fromlayer3  entity: 1
+================================ Inside B_input===================================
+[B] Receive a packet from layer3. Expected[2] Packet[seq=0,ack=111,check=2106,data=i..]
+[B] Duplicated packet detected. Expected[2] Packet[seq=0,ack=111,check=2106,data=i..]
+          TOLAYER3: packet being lost
+================================ Outside B_input(packet) =========================
+
+EVENT time: 345.828003,  type: 2, fromlayer3  entity: 0
+================================ Inside A_input===================================
+[A] Receive ACK packet from layer3. Window[2,2) Packet[seq=1,ack=1,check=2016,data=j..]
+[A] Received duplicate ACK. Window[2,2) Packet[seq=1,ack=1,check=2016,data=j..]
+
+EVENT time: 348.360962,  type: 2, fromlayer3  entity: 1
+================================ Inside B_input===================================
+[B] Receive a packet from layer3. Expected[2] Packet[seq=1,ack=111,check=2126,data=j..]
+[B] Duplicated packet detected. Expected[2] Packet[seq=1,ack=111,check=2126,data=j..]
+          TOLAYER3: packet being corrupted
+================================ Outside B_input(packet) =========================
+
+EVENT time: 349.407806,  type: 2, fromlayer3  entity: 1
+================================ Inside B_input===================================
+[B] Receive a packet from layer3. Expected[2] Packet[seq=0,ack=111,check=2106,data=i..]
+[B] Duplicated packet detected. Expected[2] Packet[seq=0,ack=111,check=2106,data=i..]
+================================ Outside B_input(packet) =========================
+
+EVENT time: 353.319763,  type: 2, fromlayer3  entity: 0
+================================ Inside A_input===================================
+[A] Receive ACK packet from layer3. Window[2,2) Packet[seq=1,ack=1,check=2016,data=Z..]
+[A] ACK packet is corrupted. Window[2,2) Packet[seq=1,ack=1,check=2016,data=Z..]
+
+EVENT time: 356.622681,  type: 2, fromlayer3  entity: 0
+================================ Inside A_input===================================
+[A] Receive ACK packet from layer3. Window[2,2) Packet[seq=0,ack=1,check=1996,data=i..]
+[A] Received duplicate ACK. Window[2,2) Packet[seq=0,ack=1,check=1996,data=i..]
+
+EVENT time: 357.380096,  type: 2, fromlayer3  entity: 1
+================================ Inside B_input===================================
+[B] Receive a packet from layer3. Expected[2] Packet[seq=1,ack=111,check=2126,data=j..]
+[B] Duplicated packet detected. Expected[2] Packet[seq=1,ack=111,check=2126,data=j..]
+          TOLAYER3: packet being lost
+================================ Outside B_input(packet) =========================
+ Simulator terminated at time 357.380096
+ after sending 10 msgs from layer5
